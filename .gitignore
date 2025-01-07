@@ -1,0 +1,6 @@
+# ignore the node modules folder
+/node_modules
+
+# ignore the env file with the database connection
+.env
+
