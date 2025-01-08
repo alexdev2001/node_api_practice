@@ -22,11 +22,12 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 // load the models
-db.user = require('./user')(sequelize, Sequelize);
-db.book = require('./book')(sequelize, Sequelize);
+db.user = require('./user')(sequelize, DataTypes);
+db.book = require('./book')(sequelize, DataTypes);
 
 // establish relationships between the entities
 db.user.hasMany(db.book, { as: 'book', foreignKey: 'userId' });
 db.book.belongsTo(db.user, { as: 'user', foreignKey: 'userId' });
+
 
 module.exports = db;

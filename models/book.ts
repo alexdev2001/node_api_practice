@@ -1,5 +1,7 @@
-module.exports = (sequelize: any, DataTypes: any): any => {
-    const book = sequelize.define('book', {
+import {Model, ModelStatic} from "sequelize";
+
+module.exports = (sequelize: any, DataTypes: any): ModelStatic<Model> => {
+    return sequelize.define('book', {
         bookId: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -15,8 +17,7 @@ module.exports = (sequelize: any, DataTypes: any): any => {
         },
         userId: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
     });
-    return book;
 }

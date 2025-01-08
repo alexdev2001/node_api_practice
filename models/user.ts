@@ -2,7 +2,7 @@
 // database entity
 
 module.exports = (sequelize: any, DataTypes: any): any => {
-    const users = sequelize.define('user', {
+    return sequelize.define('user', {
         userId: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -18,5 +18,4 @@ module.exports = (sequelize: any, DataTypes: any): any => {
             unique: true,
         },
     });
-    return users;
 }
