@@ -14,7 +14,7 @@ const findBookById = async (id) : Promise<any> => {
 
 const deleteBook = async (id: string) : Promise<any> => {
     try {
-        const book = await Book.findByPK(id);
+        const book = await Book.findByPk(id);
 
         if (!book) {
             throw new Error('Book not found');

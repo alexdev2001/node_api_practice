@@ -20,7 +20,7 @@ const getAllBooks = async (req, res) => {
 
 const getBookById = async (req, res) => {
     try {
-       const book = await bookService.findBookById(req.params.id);
+       const book = await bookService.findBookById(req.params.bookId);
        res.status(200).json(book);
     } catch (error) {
         res.status(500).json({error: error.message});
@@ -29,7 +29,7 @@ const getBookById = async (req, res) => {
 
 const deleteBook = async (req, res) => {
     try {
-        const book = await bookService.deleteBook(req.params.id);
+        const book = await bookService.deleteBook(req.params.bookId);
         res.status(200).json(book);
     } catch (error) {
         res.status(500).json({error: error.message});
