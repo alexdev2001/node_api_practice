@@ -1,7 +1,9 @@
 // model file defining the structure of the
 // database entity
 
-module.exports = (sequelize: any, DataTypes: any): any => {
+import {Model, ModelStatic} from "sequelize";
+
+module.exports = (sequelize: any, DataTypes: any): ModelStatic<Model> => {
     return sequelize.define('user', {
         userId: {
             type: DataTypes.INTEGER,
